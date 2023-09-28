@@ -33,11 +33,14 @@ class TestTriangles(unittest.TestCase):
     def testScaleneTriangleA(self): 
         self.assertEqual(classifyTriangle(6,7,5),'Scalene','4,4,5 is a Scalene triangle')
 
-    def testSideLowerLimitTriangleA(self): 
-        self.assertEqual(classifyTriangle(4,0,-5),'InvalidInput','4,0,5 is a InvalidInput')
-
     def testSideUpperLimitTriangleA(self): 
-        self.assertEqual(classifyTriangle(201,4,5),'InvalidInput','201,4,5 is a InvalidInput')
+        self.assertEqual(classifyTriangle(201,4,5),'InvalidInputOne','201,4,5 is a InvalidInput')
+
+    def testSideLowerLimitTriangleA(self): 
+        self.assertEqual(classifyTriangle(4,0,-5),'InvalidInputTwo','4,0,5 is a InvalidInput')
+
+    def testInputDatatypeTriangleA(self): 
+        self.assertEqual(classifyTriangle(4,1.5,5),'InvalidInputThree','4,0,5 is a InvalidInput')
 
     def testFormationTriangleA(self): 
         self.assertEqual(classifyTriangle(2,3,6),'NotATriangle','2,3,6 is a NotATriangle')
